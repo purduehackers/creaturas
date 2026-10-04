@@ -4,11 +4,13 @@ body {
     overflow: clip;
 }
 .background {
- position: absolute;
- top: 0;
- left: 0;
- width: 100vw;
- height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
 }
 .lace {
     position: absolute;
@@ -30,10 +32,12 @@ body {
 .drawbox {
     border-radius: 3.51769rem;
     border: 10px solid #3B338B;
-    background: #ffffff;
+    background-color: #ffffff;
     width: 900px;
     height: 550px;
     box-shadow: 0 18.761px 10px 1px rgba(59, 51, 139, 0.49);
+    background-image: radial-gradient(#b3b3b3 1%, transparent 20%);
+    background-size: 5px 5px;
 }
 
 .title {
@@ -45,6 +49,61 @@ body {
     border: 10px solid #3B338B;
     text-align: center;
     line-height: 50px;
-    background: linear-gradient(180deg, #F5C374 22.66%, #EB8629 100%);
+    background: linear-gradient(180deg, #F5C374 22.66%, red 100%);
     box-shadow: 0 17.971px 15.746px 0 rgba(59, 51, 139, 0.49);
+    position: relative;
+    overflow: hidden;
 }
+
+    .title::before {
+      content: "";
+      position: absolute;
+      inset: -200px;
+      background-image:
+        radial-gradient(circle, #ffe600 30%, transparent 42%),
+        radial-gradient(circle, red 30%, transparent 22%);
+      background-size: 8px 8px, 8px 8px;
+      background-position: 0 0, 4px 4px;
+      transform: rotate(-8deg);
+    }
+
+
+    .title span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .customtxt {}
+        }
+
+
+        .pixelify-sans-<uniquifier> {
+          font-family: "Pixelify Sans", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: <weight>;
+          font-style: normal;
+        }
+
+
+        .title-wrap {
+          position: relative;
+          width: fit-content;
+        }
+
+        .knife, .spoon {
+          position: absolute;
+          height: 200px;
+          width: auto;
+          z-index: 2;
+          pointer-events: none;
+        }
+
+        .knife {
+          left: 0px;
+          top: -50px;
+        }
+
+        .spoon {
+          right: 0px;
+          top: -50px;
+        }
