@@ -24,11 +24,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
      position: absolute;
-     row-gap: 20px;
+     gap: 20px;
      display: flex;
      flex-direction: column;
-
 }
+
 .drawbox {
     border-radius: 3.51769rem;
     border: 10px solid #3B338B;
@@ -49,10 +49,11 @@ body {
     border: 10px solid #3B338B;
     text-align: center;
     line-height: 50px;
-    background: linear-gradient(180deg, #F5C374 22.66%, red 100%);
+    background: linear-gradient(180deg, #F5C374 22.66%, #ff6d2e 100%);
     box-shadow: 0 17.971px 15.746px 0 rgba(59, 51, 139, 0.49);
     position: relative;
     overflow: hidden;
+    padding: 10px 10px;
 }
 
     .title::before {
@@ -61,7 +62,7 @@ body {
       inset: -200px;
       background-image:
         radial-gradient(circle, #ffe600 30%, transparent 42%),
-        radial-gradient(circle, red 30%, transparent 22%);
+        radial-gradient(circle, white 30%, transparent 22%);
       background-size: 8px 8px, 8px 8px;
       background-position: 0 0, 4px 4px;
       transform: rotate(-8deg);
@@ -71,39 +72,64 @@ body {
     .title span {
       position: relative;
       z-index: 1;
-    }
-
-    .customtxt {}
         }
 
 
-        .pixelify-sans-<uniquifier> {
-          font-family: "Pixelify Sans", sans-serif;
-          font-optical-sizing: auto;
-          font-weight: <weight>;
-          font-style: normal;
-        }
-
-
-        .title-wrap {
-          position: relative;
-          width: fit-content;
-        }
-
-        .knife, .spoon {
+        .knife {
+          left: 0px;
+          top: -50px;
           position: absolute;
-          height: 200px;
+          height: 180px;
           width: auto;
           z-index: 2;
           pointer-events: none;
         }
 
-        .knife {
-          left: 0px;
-          top: -50px;
-        }
-
         .spoon {
           right: 0px;
           top: -50px;
+          position: absolute;
+          height: 190px;
+          width: auto;
+          z-index: 2;
+          pointer-events: none;
+        }
+
+
+
+        .pixelify-sans-heading {
+          font-family: "Pixelify Sans", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: 700;
+          font-style: normal;
+          font-size: 60px;
+               background: linear-gradient(180deg, powderblue, cornflowerblue);
+               -webkit-background-clip: text;
+               -webkit-text-fill-color: transparent;
+               display: inline-block;
+
+               -webkit-text-stroke: 4px blue;
+
+               }
+
+
+               .eraser {
+                   right: -120px;
+                   bottom: -50px;
+                 position: absolute;
+                 height: 190px;
+                 width: auto;
+                 z-index: 2;
+                 pointer-events: none;
+               }
+
+               .paintbrush {
+                 left: -120px;
+                 bottom: -50px;
+                 position: absolute;
+                 height: 400px;
+                 width: auto;
+                 z-index: 2;
+                 pointer-events: none;
+               }
         }
